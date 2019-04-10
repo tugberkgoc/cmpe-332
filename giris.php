@@ -37,7 +37,6 @@
       CAMPLY
     </div>
   </div>
-  <input type="checkbox" id="nav-check">
   <div class="nav-links">
     <a href="kayit">Kayıt Ol ?</a>
   </div>
@@ -62,10 +61,6 @@ Tamamlanıyor...
 
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0px;
   font-family: 'Roboto';
@@ -89,24 +84,16 @@ body {
   padding: 10px 10px 10px 10px;
 }
 
-.nav-links {
+.nav-links { /* Navigation linkleri inline yap */
   display: inline;
   float: right;
   font-size: 18px;
 }
 
-.nav>.nav-links>a {
+.nav>.nav-links>a { /* Navigation link buttons */
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
-}
-
-.nav>.nav-links>a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-#nav-check {
-  display: none;
 }
 </style>

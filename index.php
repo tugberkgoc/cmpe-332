@@ -10,14 +10,6 @@ include("fonksiyon.php");
       CAMPLY
     </div>
   </div>
-  <div class="nav-btn">
-    <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </div>
-  <input type="checkbox" id="nav-check">
   <div class="nav-links">
     <a href="olustur">Kamp Oluştur</a>
     <a href="cikis">Çıkış Yap</a>
@@ -63,10 +55,6 @@ Giriş Yapmadınız, Yönlendiriliyorsunuz.
 <?php } ?>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0px;
   font-family: 'Roboto';
@@ -90,10 +78,6 @@ body {
   padding: 10px 10px 10px 10px;
 }
 
-.nav>.nav-btn {
-  display: none;
-}
-
 .nav>.nav-links {
   display: inline;
   float: right;
@@ -111,7 +95,4 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.nav>#nav-check {
-  display: none;
-}
 </style>

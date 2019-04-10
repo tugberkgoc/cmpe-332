@@ -11,7 +11,6 @@
       <span></span>
     </label>
   </div>
-  <input type="checkbox" id="nav-check">
   <div class="nav-links">
     <a href="anasayfa">Anasayfa</a>
     <a href="olustur">Kamp Oluştur</a>
@@ -138,10 +137,6 @@ if(isset($_POST['delete']) ? $_POST['delete'] : '' == true) {
   height:80%;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0px;
   font-family: 'Roboto';
@@ -184,9 +179,5 @@ body {
 
 .nav>.nav-links>a:hover {
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-.nav>#nav-check {
-  display: none;
 }
 </style>

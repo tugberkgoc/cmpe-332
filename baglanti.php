@@ -2,6 +2,11 @@
 /**
  * Server name, password, db name
  */
+// $servername = "www.remotemysql.com";
+// $username = "S0STwKnucp";
+// $password = "UcufjA165k";
+// $dbname = "S0STwKnucp";
+
 $servername = "localhost";
 $username = "root";
 $password = "";

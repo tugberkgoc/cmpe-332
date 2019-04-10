@@ -1,5 +1,5 @@
 <?php 
-ob_start();
+ob_start(); // When last statement executed, the page will refresh
 session_start();
 $_SESSION = array();
 session_destroy();

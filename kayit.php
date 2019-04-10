@@ -29,7 +29,6 @@ if($kadi == true) {
       CAMPLY
     </div>
   </div>
-  <input type="checkbox" id="nav-check">
   <div class="nav-links">
     <a href="giris">Giriş Yap ?</a>
   </div>
@@ -51,10 +50,6 @@ Zaten Giriş Yaptınız, Yönlendiriliyorsunuz.
 <?php } ?>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0px;
   font-family: 'Roboto';
@@ -93,9 +88,5 @@ body {
 
 .nav>.nav-links>a:hover {
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-.nav>#nav-check {
-  display: none;
 }
 </style>
