@@ -1,28 +1,59 @@
 ﻿<?php
 include("fonksiyon.php");
+$statusMsg = '';
+
+
+
 
 $baslik = isset($_POST["baslik"]) ? $_POST["baslik"] : '';
 $aciklama = isset($_POST["aciklama"]) ? $_POST["aciklama"] : '';;
 $fiyat = isset($_POST["fiyat"]) ? $_POST["fiyat"] : '';
-$foto1 = isset($_POST["foto1"]) ? $_POST["foto1"] : '';
-$foto2 = isset($_POST["foto2"]) ? $_POST["foto2"] : '';
 $olusturan = $_SESSION['kadi'];
 
+
 if($baslik == true) {
-  if(is_numeric($fiyat)) {
-  	$sql = "INSERT INTO camp
-   (baslik,aciklama,fiyat,foto1,foto2,olusturan) VALUES ('$baslik', '$aciklama', '$fiyat', '$foto1', '$foto2', '$olusturan')";
-  		if ($conn->query($sql) === TRUE) {
-  			echo 'Kamp Kaydı Başarılı';
-  			echo '<meta http-equiv="refresh" content="2;URL=anasayfa">';
-  		} else {
-  			echo "Error: " . $sql . "<br>" . $conn->error;
-      }
-  } else {
-    echo 'Fiyatı doğru giriniz!';
-    echo '<meta http-equiv="refresh" content="2;URL=olustur">';
-  }
-} 
+	
+	// File upload path
+$targetDir = "uploads/";
+$fileName = basename($_FILES["file"]["name"]);
+$targetFilePath = $targetDir . $fileName;
+
+$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+	if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
+    // Allow certain file formats
+    $allowTypes = array('jpg','png','jpeg','gif','pdf');
+    if(in_array($fileType, $allowTypes)){
+        // Upload file to server
+        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+            // Insert image file name into database
+			
+			     if(is_numeric($fiyat)) {
+  	         $sql = "INSERT INTO camp
+              (baslik,aciklama,fiyat,foto1,olusturan,tarih) VALUES ('$baslik', '$aciklama', '$fiyat', '".$fileName."', '$olusturan', NOW())";
+  		        if ($conn->query($sql) === TRUE) {
+  			         echo 'Kamp Kaydı Başarılı';
+  			         echo '<meta http-equiv="refresh" content="2;URL=anasayfa">';
+  		        } else {
+  			         echo "Error: " . $sql . "<br>" . $conn->error;
+             }
+          } else {
+              echo 'Fiyatı doğru giriniz!';
+              echo '<meta http-equiv="refresh" content="2;URL=olustur">';
+           }
+        }else{
+            $statusMsg = "Sorry, there was an error uploading your file.";
+        }
+    }else{
+        $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+    }
+}else{
+    $statusMsg = 'Please select a file to upload.';
+}}
+
+// Display status message
+echo $statusMsg;
+ 
 ?>
 
 <div class="nav">
@@ -31,13 +62,6 @@ if($baslik == true) {
       CAMPLY
     </div>
   </div>
-  <div class="nav-btn">
-    <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </div>
   <div class="nav-links">
     <a href="anasayfa">Anasayfa</a>
     <a href="cikis">Çıkış Yap</a>
@@ -45,7 +69,7 @@ if($baslik == true) {
 </div>
 
 <div id="wrapper">
-  <form method="POST" id="form">
+  <form method="POST" id="form" enctype="multipart/form-data">
 
     <label for="baslik">Başlık</label>
     <input type="text" id="baslik" name="baslik" />
@@ -56,11 +80,7 @@ if($baslik == true) {
     <label for="fiyat">Fiyat</label>
     <input type="text" id="fiyat" name="fiyat" />
 
-    <label for="foto1">Foto - 1</label>
-    <textarea id="foto1" cols="30" rows="10" name="foto1"></textarea><br />
-
-    <label for="foto2">Foto - 2</label>
-    <textarea id="foto2" cols="30" rows="10" name="foto2"></textarea><br />
+	  <input class="file" type="file" name="file">
 
     <input type="submit" value="Oluştur" name="submit" id="submit" />
   </form>
@@ -145,10 +165,6 @@ body {
   padding: 10px 10px 10px 10px;
 }
 
-.nav>.nav-btn {
-  display: none;
-}
-
 .nav>.nav-links {
   display: inline;
   float: right;
@@ -165,4 +181,9 @@ body {
 .nav>.nav-links>a:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.file {
+
+}
+
 </style>

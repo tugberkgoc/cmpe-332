@@ -4,13 +4,6 @@
       CAMPLY
     </div>
   </div>
-  <div class="nav-btn">
-    <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </div>
   <div class="nav-links">
     <a href="anasayfa">Anasayfa</a>
     <a href="olustur">Kamp Oluştur</a>
@@ -24,21 +17,15 @@ $query = mysqli_query($conn, "SELECT * FROM camp where id=".$_GET['id']."");
 $row = mysqli_fetch_array($query);
 ?>
 
-<table>
-  <tr>
-    <?php if($row['foto1'] == true) { ?><td><img class="images" src="<?php echo $row['foto1']; ?>"></td>
-    <?php } ?>
-    <?php if($row['foto2'] == true) { ?><td><img class="images" src="<?php echo $row['foto2']; ?>"></td>
-    <?php } ?>
-  </tr>
-</table>
+
+<img class="images" src="<?php echo 'uploads/'.$row['foto1']; ?>">
+	
 
 <span class="baslik"><?php echo $row['baslik']; ?></span>
-<br />
-<span class="aciklama"><?php echo $row['aciklama']; ?></span>
-<br />
-<span class="fiyat" style="font-weight: bold;"><?php echo $row['fiyat']; ?></span><span style="font-weight: bold;"> TL/Günlük</span>
 
+<span class="aciklama"><?php echo $row['aciklama']; ?></span>
+
+<span class="fiyat" style="font-weight: bold;"><?php echo $row['fiyat']." TL/Günlük"; ?></span>
 
 <h2>Yorumlar</h2>
 
@@ -111,30 +98,34 @@ if(isset($_POST['delete']) ? $_POST['delete'] : '' == true) {
 
 <style>
 .baslik {
-  padding-left: 45%;
+  display: flex;
+  justify-content: center;
   font-family: Helvetica;
   font-size: 50px;
 }
 
 .aciklama {
-  padding-left: 45%;
+  display: flex;
+  justify-content: center;
   font-family: Helvetica;
   font-size: 20px;
 }
 
 .fiyat {
-  padding-left: 45%;
+  display: flex;
+  justify-content: center;
   font-family: Helvetica;
   font-size: 20px;
 }
 
 .images {
-  padding-left: 30%;
-  display: block;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width:100%;
-  height:80%;
+  width: 860px;
+  height: 540px;
 }
 
 body {
@@ -158,10 +149,6 @@ body {
   font-size: 22px;
   color: #fff;
   padding: 10px 10px 10px 10px;
-}
-
-.nav>.nav-btn {
-  display: none;
 }
 
 .nav>.nav-links {
