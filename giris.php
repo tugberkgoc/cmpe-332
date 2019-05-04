@@ -32,16 +32,34 @@
 
 <div class="nav">
   <div class="nav-header">
-    <div class="nav-title">
+    <div class="nav-title" style="color: #777777;">
       CAMPLY
     </div>
   </div>
   <div class="nav-links">
-    <a href="kayit">Kayıt Ol ?</a>
+    <a href="giris" style="color: #777777;">Login</a>
+    <a href="kayit" style="color: #777777;">Sign Up</a>
   </div>
 </div>
 
-<form method="POST">
+
+<div class="vid-container">
+  <video class="bgvid" src="loginbackground.mp4" autoplay="autoplay" muted="muted" preload="auto" loop>
+  </video>
+  <div class="inner-container">
+    <div class="box">
+       <form method="POST">
+        <h1>LOGIN NOW</h1>
+        <input type="text" name="kadi" placeholder="Username"/>
+        <input type="text" name="sifre" placeholder="Password"/>
+        <button>LOGIN</button>
+      </form>
+      <p>Not a member? <span class="signup">Sign Up</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- <form method="POST">
 
   <label>Kullanıcı Adı</label>
   <input type="text" name="kadi">
@@ -49,7 +67,7 @@
   <label>Şifreniz</label>
   <input type="password" name="sifre">
   <input type="submit" value="Giriş Yap">
-</form>
+</form> -->
 
 <?php } else { ?>
 
@@ -62,13 +80,15 @@ Tamamlanıyor...
 <style>
 body {
   margin: 0px;
-  font-family: 'Roboto';
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  padding:0;
 }
 
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: white;
   position: relative;
 }
 
@@ -94,5 +114,88 @@ body {
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
+}
+
+.vid-container{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+.bgvid{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100vw;
+}
+.inner-container{
+  width:400px;
+  height:400px;
+  position:absolute;
+  top:calc(50vh - 200px);
+  left:calc(50vw - 200px);
+  overflow:hidden;
+}
+.bgvid.inner{
+  top:calc(-50vh + 200px);
+  left:calc(-50vw + 200px);
+  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+  -webkit-filter:blur(10px);
+  -ms-filter: blur(10px);
+  -o-filter: blur(10px);
+  filter:blur(10px);
+}
+.box{
+  position:absolute;
+  height:100%;
+  width:100%;
+  font-family:Helvetica;
+  color:#fff;
+  background: #565656;
+  padding:30px 0px;
+  opacity: 0.8;
+}
+.box .signup{
+  color: #668bae;
+}
+.box h1{
+  text-align:center;
+  margin:30px 0;
+  font-size:30px;
+}
+.box input{
+  display:block;
+  width:300px;
+  margin:20px auto;
+  padding:15px;
+  background:rgba(0,0,0,0.2);
+  color:#fff;
+  border:2px solid white;
+  border-radius: 50px;
+}
+.box input:focus,.box input:active,.box button:focus,.box button:active{
+  outline:none;
+}
+.box button{
+  background:#fea400;
+  border:0;
+  color:#fff;
+  padding:10px;
+  font-size:20px;
+  width:150px;
+  margin:20px auto;
+  display:block;
+  cursor:pointer;
+  border-radius: 50px;
+}
+.box button:active{
+  background:#27ae60;
+}
+.box p{
+  font-size:14px;
+  text-align:center;
+}
+.box p span{
+  cursor:pointer;
+  color:#666;
 }
 </style>
