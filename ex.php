@@ -1,8 +1,3 @@
-<?php
-include("fonksiyon.php");
-?>
-
-<?php if($_SESSION['login'] == true) { ?>
 
 <div class="nav">
   <div class="nav-header">
@@ -36,13 +31,12 @@ include("fonksiyon.php");
     <td><?php echo $row['aciklama']; ?></td>
     <td><?php echo $row['fiyat']; ?></td>
     <td><?php echo $row['foto1']; ?></td>
-    <?php if($_SESSION['kadi'] == $row['olusturan'] || $grup == 1) { ?>
+    
     <td><a href="sil?id=<?php echo $row['id']; ?>">Sil</a> | <a href="profil?id=<?php echo $row['id']; ?>">Yorum Yap</a>
     </td>
-    <?php } else { ?>
+    <
     <td><a href="profil?id=<?php echo $row['id']; ?>">Yorum Yap</a></td>
-    <?php } ?>
+   
   </tr>
-  <?php } ?>
 
 </table>

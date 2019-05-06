@@ -6,16 +6,44 @@ include("fonksiyon.php");
 
 <div class="nav">
   <div class="nav-header">
-    <div class="nav-title">
+    <div class="nav-title" style="color: #777777;">
       CAMPLY
     </div>
   </div>
   <div class="nav-links">
-    <a href="olustur">Kamp Oluştur</a>
-    <a href="cikis">Çıkış Yap</a>
+  	<a style="color: #777777;">Signed In As <?php echo $_SESSION['kadi'] ?></a>
+    <a href="olustur" style="color: #777777;">Create new campsite</a>
+    <a href="cikis" style="color: #777777;">Log Out</a>
   </div>
 </div>
 
+<header>
+	<h4 style="font-family: 'Roboto'; font-size: 50px; margin-left:25vw;">Welcome to the Camply!</h1>
+	<button id="create" style="width: 180px; height: 40px; background-color: #337ab7; border-color: #2e6da4; border-radius: 4px; margin-bottom: 0; color: white; margin-left: 5vw;">Create new campsite</button>
+    <span style="background: white; width: 10px; margin-left: 40vw;" id="down">&#8595;</span>
+</header>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
+	$(document).ready( function () {
+	$('#down').on('click',function () {
+		$("html").scrollTop(0);
+		console.log("Clicked!");
+		 $('html, body').animate({
+        scrollTop: $(".main").offset().top
+    }, 1000);
+	});
+	$('#create').on('click',function () {
+		window.open("http://localhost/camp/olustur");
+	});
+});
+</script>
+
+<div class="main">
 <div class="container">
 
 	<div class="wrap">
@@ -26,7 +54,7 @@ include("fonksiyon.php");
 		?>
 		
 	<div class="tooltip">
-  	<span class="tooltiptext">Yorum Yap</span>
+  	<span class="tooltiptext"><?php echo $row['baslik']; ?></span>
 
 	<a href="profil?id=<?php echo $row['id']; ?>">
 		<div class="box one" style="background: url(<?php echo'uploads/'.$row['foto1']; ?>); background-repeat: no-repeat;
@@ -35,7 +63,7 @@ include("fonksiyon.php");
 			<div class="date">
 				<h4><?php echo $row['tarih']; ?></h4>
 			</div>
-			<h1><?php echo $row['baslik']; ?></h1>
+			<h1>More info</h1>
 			<!-- <div class="poster p1">
 				<h4>Z</h4>
 			</div> -->
@@ -47,6 +75,7 @@ include("fonksiyon.php");
 	</div>
 
 </div>
+</div>
 
 
 <?php } else { ?>
@@ -55,15 +84,16 @@ Giriş Yapmadınız, Yönlendiriliyorsunuz.
 <?php } ?>
 
 <style>
+
 body {
   margin: 0px;
-  font-family: 'Roboto';
+  padding:0;
 }
 
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: #F8F8F8;
   position: relative;
 }
 
@@ -76,28 +106,23 @@ body {
   font-size: 22px;
   color: #fff;
   padding: 10px 10px 10px 10px;
+  font-family: 'Pacifico';
 }
 
-.nav>.nav-links {
+.nav-links { /* Navigation linkleri inline yap */
+  padding-top: 4px;
   display: inline;
   float: right;
-  font-size: 18px;
+  font-size: 14px;
 }
 
-.nav>.nav-links>a {
+.nav>.nav-links>a { /* Navigation link buttons */
   display: inline-block;
-  padding: 13px 10px 13px 10px;
+  padding: 12px 15px 12px 15px;
   text-decoration: none;
   color: #efefef;
-}
-
-.nav>.nav-links>a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-body {
-	font-family: 'Roboto', sans-serif;
-	background: #fff;
+  font-size: 16px;
+  font-family: "Helvetica Neue";
 }
 
 .conatiner {
@@ -140,13 +165,17 @@ body {
 	        box-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
 .box h1 {
+	text-decoration: none;
 	color: #fff;
-	padding: 30px;
-	margin-top: 373px;
+	width: 40%;
+	margin-left: 25%;
+	padding: 20px;
+	margin-top: 359px;
 	text-align: center;
 	font-weight: 100;
 	font-size: 25px;
-	background: rgba(0,0,0,0.8);
+	border-radius: 15px;
+	background: #337ab7;
 	-webkit-box-shadow: 0 0 30px rgba(0,0,0,0.7);
 	        box-shadow: 0 0 30px rgba(0,0,0,0.8);
 }
@@ -170,7 +199,7 @@ body {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: #555;
+  background-color: #777777;
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -204,6 +233,35 @@ body {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+header {
+	height: 30vh;
+	width: 80vw;
+	background: url(https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260) center center / cover no-repeat;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+	margin-left: 10vw;
+	border-radius: 15px;
+	margin-top: 25px;
+}
+
+.main {
+	width: 90%;
+	max-width: 100%;
+	margin: 10px 5% 0 5%;
+	margin-left: 5vw;
+	font-size: 1.4em;
+	line-height: 1.4em;
+	/*padding: 15px;*/
+	height: 100vh;
+}
+
+#down:hover{
+	cursor: pointer;
+	background-color: #eee;
+	opacity: 0.8;
 }
 
 </style>

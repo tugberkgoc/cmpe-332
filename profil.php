@@ -1,13 +1,18 @@
-﻿<div class="nav">
+﻿<?php
+include("fonksiyon.php");
+?>
+
+
+<div class="nav">
   <div class="nav-header">
-    <div class="nav-title">
+    <div class="nav-title" style="color: #777777;">
       CAMPLY
     </div>
   </div>
   <div class="nav-links">
-    <a href="anasayfa">Anasayfa</a>
-    <a href="olustur">Kamp Oluştur</a>
-    <a href="cikis">Çıkış Yap</a>
+    <a style="color: #777777;">Signed In As <?php echo $_SESSION['kadi'] ?></a>
+    <a href="anasayfa" style="color: #777777;">Home</a>
+    <a href="cikis" style="color: #777777;">Log Out</a>
   </div>
 </div>
 
@@ -130,13 +135,13 @@ if(isset($_POST['delete']) ? $_POST['delete'] : '' == true) {
 
 body {
   margin: 0px;
-  font-family: 'Roboto';
+  padding:0;
 }
 
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: #F8F8F8;
   position: relative;
 }
 
@@ -149,22 +154,23 @@ body {
   font-size: 22px;
   color: #fff;
   padding: 10px 10px 10px 10px;
+  font-family: 'Pacifico';
 }
 
-.nav>.nav-links {
+.nav-links { /* Navigation linkleri inline yap */
+  padding-top: 4px;
   display: inline;
   float: right;
-  font-size: 18px;
+  font-size: 14px;
 }
 
-.nav>.nav-links>a {
+.nav>.nav-links>a { /* Navigation link buttons */
   display: inline-block;
-  padding: 13px 10px 13px 10px;
+  padding: 12px 15px 12px 15px;
   text-decoration: none;
   color: #efefef;
+  font-size: 16px;
+  font-family: "Helvetica Neue";
 }
 
-.nav>.nav-links>a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
 </style>

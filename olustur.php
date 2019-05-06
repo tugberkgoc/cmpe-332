@@ -2,9 +2,6 @@
 include("fonksiyon.php");
 $statusMsg = '';
 
-
-
-
 $baslik = isset($_POST["baslik"]) ? $_POST["baslik"] : '';
 $aciklama = isset($_POST["aciklama"]) ? $_POST["aciklama"] : '';;
 $fiyat = isset($_POST["fiyat"]) ? $_POST["fiyat"] : '';
@@ -58,56 +55,50 @@ echo $statusMsg;
 
 <div class="nav">
   <div class="nav-header">
-    <div class="nav-title">
+    <div class="nav-title" style="color: #777777;">
       CAMPLY
     </div>
   </div>
   <div class="nav-links">
-    <a href="anasayfa">Anasayfa</a>
-    <a href="cikis">Çıkış Yap</a>
+    <a style="color: #777777;">Signed In As <?php echo $_SESSION['kadi'] ?></a>
+    <a href="anasayfa" style="color: #777777;">Anasayfa</a>
+    <a href="cikis" style="color: #777777;">Çıkış Yap</a>
   </div>
 </div>
 
+<h3 style="color: black; text-align: center; font-family: 'Righteous', cursive; font-size: 36px;">Add a New Campground</h3>
 <div id="wrapper">
   <form method="POST" id="form" enctype="multipart/form-data">
 
-    <label for="baslik">Başlık</label>
-    <input type="text" id="baslik" name="baslik" />
+    <input type="text" id="baslik" name="baslik" placeholder="Name" />
 
-    <label for="aciklama">Açıklama</label>
-    <input type="text" id="aciklama" name="aciklama" />
+    <input type="text" id="aciklama" name="aciklama" placeholder="Description" />
 
-    <label for="fiyat">Fiyat</label>
-    <input type="text" id="fiyat" name="fiyat" />
+    <input type="text" id="fiyat" name="fiyat" placeholder="Price" />
 
-	  <input class="file" type="file" name="file">
+	  <input class="file" type="file" name="file" placeholder="Image">
 
-    <input type="submit" value="Oluştur" name="submit" id="submit" />
+    <input style="font-size: 20px" type="submit" value="Submit!" name="submit" id="submit" />
   </form>
 </div>
 
 <style>
+
 #wrapper {
   font-family: 'Roboto';
   margin: 30px auto;
   padding: 30px;
-  background: #4D6879; /* You can change the main color of thew form here. */
   font-size: 14px;
   width: 100%;
-  max-width: 500px;
-}
-
-label {
-  display: block;
-  font-size: 24px;
-  padding: 13px 0;
-  color: #fff;
+  max-width: 400px;
 }
 
 input {
   height: 18px;
   padding: 20px;
   width: 100%;
+  margin-top: 10px;
+  border-radius: 15px;
 }
 
 textarea {
@@ -119,7 +110,7 @@ textarea {
 
 input[type="text"]:hover,
 textarea:hover {
-  border: 1px solid #fff;
+  border-radius: 15px;
 }
 
 input#submit {
@@ -128,13 +119,14 @@ input#submit {
   height: 50px;
   padding: 0;
   margin-top: 50px;
-  border: 1px solid #000;
-  background: #000;
+  border: 1px solid transparent;
+  background: #337ab7;
 }
 
 input#submit:hover {
-  color: #ccc;
+/*  color: #ccc;*/
   cursor: pointer;
+  background: #2e6da4;
 }
 
 label {
@@ -144,13 +136,13 @@ label {
 
 body {
   margin: 0px;
-  font-family: 'Roboto';
+  padding:0;
 }
 
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: #F8F8F8;
   position: relative;
 }
 
@@ -163,23 +155,23 @@ body {
   font-size: 22px;
   color: #fff;
   padding: 10px 10px 10px 10px;
+  font-family: 'Pacifico';
 }
 
-.nav>.nav-links {
+.nav-links { /* Navigation linkleri inline yap */
+  padding-top: 4px;
   display: inline;
   float: right;
-  font-size: 18px;
+  font-size: 14px;
 }
 
-.nav>.nav-links>a {
+.nav>.nav-links>a { /* Navigation link buttons */
   display: inline-block;
-  padding: 13px 10px 13px 10px;
+  padding: 12px 15px 12px 15px;
   text-decoration: none;
   color: #efefef;
-}
-
-.nav>.nav-links>a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-family: "Helvetica Neue";
 }
 
 .file {
