@@ -80,15 +80,13 @@ Tamamlanıyor...
 <style>
 body {
   margin: 0px;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
   padding:0;
 }
 
 .nav {
   height: 50px;
   width: 100%;
-  background-color: white;
+  background-color: #F8F8F8;
   position: relative;
 }
 
@@ -101,12 +99,14 @@ body {
   font-size: 22px;
   color: #fff;
   padding: 10px 10px 10px 10px;
+  font-family: 'Pacifico';
 }
 
 .nav-links { /* Navigation linkleri inline yap */
+  padding-top: 4px;
   display: inline;
   float: right;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .nav>.nav-links>a { /* Navigation link buttons */
@@ -114,6 +114,7 @@ body {
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
+  font-family: "Helvetica Neue";
 }
 
 .vid-container{
