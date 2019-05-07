@@ -34,8 +34,11 @@ CREATE TABLE `camp` (
   `aciklama` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `fiyat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `foto1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `olusturan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `olusturan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tarih` DATE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ALTER TABLE `camp` ADD `tarih` DATE NOT NULL AFTER `olusturan`;
 
 --
 -- Tablo döküm verisi `camp`
