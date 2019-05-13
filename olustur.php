@@ -61,8 +61,8 @@ echo $statusMsg;
   </div>
   <div class="nav-links">
     <a style="color: #777777;">Signed In As <?php echo $_SESSION['kadi'] ?></a>
-    <a href="anasayfa" style="color: #777777;">Anasayfa</a>
-    <a href="cikis" style="color: #777777;">Çıkış Yap</a>
+    <a href="anasayfa" style="color: #777777;">Homepage</a>
+    <a href="cikis" style="color: #777777;">Log Out</a>
   </div>
 </div>
 

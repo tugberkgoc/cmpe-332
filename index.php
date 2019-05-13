@@ -20,7 +20,7 @@ include("fonksiyon.php");
 <header>
 	<h4 style="font-family: 'Roboto'; font-size: 50px; margin-left:25vw;">Welcome to the Camply!</h1>
 	<button id="create" style="width: 180px; height: 40px; background-color: #337ab7; border-color: #2e6da4; border-radius: 4px; margin-bottom: 0; color: white; margin-left: 5vw;">Create new campsite</button>
-    <span style="background: white; width: 10px; margin-left: 40vw;" id="down">&#8595;</span>
+    <!-- <span style="background: white; width: 10px; margin-left: 40vw;" id="down">&#8595;</span> -->
 </header>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -30,13 +30,13 @@ window.onbeforeunload = function () {
 }
 
 	$(document).ready( function () {
-	$('#down').on('click',function () {
-		$("html").scrollTop(0);
-		console.log("Clicked!");
-		 $('html, body').animate({
-        scrollTop: $(".main").offset().top
-    }, 1000);
-	});
+	// $('#down').on('click',function () {
+	// 	$("html").scrollTop(0);
+	// 	console.log("Clicked!");
+	// 	 $('html, body').animate({
+ //        scrollTop: $(".main").offset().top
+ //    }, 1000);
+	// });
 	$('#create').on('click',function () {
 		window.open("http://localhost/camp/olustur");
 	});
@@ -79,7 +79,7 @@ window.onbeforeunload = function () {
 
 
 <?php } else { ?>
-Giriş Yapmadınız, Yönlendiriliyorsunuz.
+You should log in, first.
 <meta http-equiv="refresh" content="1;URL=giris">
 <?php } ?>
 
