@@ -21,26 +21,3 @@ if (!$conn) {
 }
 mysqli_set_charset($conn,"utf8");
 ?>
-
-<style>
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-table#t01 tr:nth-child(even) { /* Cift sayili row icin renk stili */
-  background-color: #eee;
-}
-
-table#t01 tr:nth-child(odd) { /* Tek sayili row icin renk stili */
-  background-color: #fff;
-}
-
-table#t01 th { /* th: TABLE HEADER */
-  color: white;
-  background-color: black; 
-}
-</style>

@@ -59,16 +59,6 @@
   </div>
 </div>
 
-<!-- <form method="POST">
-
-  <label>Kullanıcı Adı</label>
-  <input type="text" name="kadi">
-
-  <label>Şifreniz</label>
-  <input type="password" name="sifre">
-  <input type="submit" value="Giriş Yap">
-</form> -->
-
 <?php } else { ?>
 
 Tamamlanıyor...
@@ -76,8 +66,8 @@ Tamamlanıyor...
 
 <?php } ?>
 
-
 <style>
+
 body {
   margin: 0px;
   padding:0;
@@ -111,9 +101,10 @@ body {
 
 .nav>.nav-links>a { /* Navigation link buttons */
   display: inline-block;
-  padding: 13px 10px 13px 10px;
+  padding: 12px 15px 12px 15px;
   text-decoration: none;
   color: #efefef;
+  font-size: 16px;
   font-family: "Helvetica Neue";
 }
 
@@ -122,12 +113,14 @@ body {
   height:100vh;
   overflow:hidden;
 }
+
 .bgvid{
   position:absolute;
   left:0;
   top:0;
   width:100vw;
 }
+
 .inner-container{
   width:400px;
   height:400px;
@@ -136,6 +129,7 @@ body {
   left:calc(50vw - 200px);
   overflow:hidden;
 }
+
 .bgvid.inner{
   top:calc(-50vh + 200px);
   left:calc(-50vw + 200px);
@@ -145,6 +139,7 @@ body {
   -o-filter: blur(10px);
   filter:blur(10px);
 }
+
 .box{
   position:absolute;
   height:100%;
@@ -155,14 +150,17 @@ body {
   padding:30px 0px;
   opacity: 0.8;
 }
+
 .box .signup{
   color: #668bae;
 }
+
 .box h1{
   text-align:center;
   margin:30px 0;
   font-size:30px;
 }
+
 .box input{
   display:block;
   width:300px;
@@ -173,9 +171,11 @@ body {
   border:2px solid white;
   border-radius: 50px;
 }
+
 .box input:focus,.box input:active,.box button:focus,.box button:active{
   outline:none;
 }
+
 .box button{
   background:#fea400;
   border:0;
@@ -188,15 +188,19 @@ body {
   cursor:pointer;
   border-radius: 50px;
 }
+
 .box button:active{
   background:#27ae60;
 }
+
 .box p{
   font-size:14px;
   text-align:center;
 }
+
 .box p span{
   cursor:pointer;
   color:#666;
 }
+
 </style>
