@@ -38,7 +38,7 @@ window.onbeforeunload = function () {
  //    }, 1000);
 	// });
 	$('#create').on('click',function () {
-		window.open("http://localhost/camp/olustur");
+		window.open("http://localhost/camply/olustur");
 	});
 });
 </script>
@@ -56,12 +56,12 @@ window.onbeforeunload = function () {
 	<div class="tooltip">
   	<span class="tooltiptext"><?php echo $row['baslik']; ?></span>
 
-	<a href="profil?id=<?php echo $row['id']; ?>">
+	<a style="text-decoration: none" href="profil?id=<?php echo $row['id']; ?>">
 		<div class="box one" style="background: url(<?php echo'uploads/'.$row['foto1']; ?>); background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;">
 			<div class="date">
-				<h4><?php echo $row['tarih']; ?></h4>
+				<h4 style="color: white"><?php echo $row['tarih']; ?></h4>
 			</div>
 			<h1>More info</h1>
 			<!-- <div class="poster p1">
