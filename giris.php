@@ -51,7 +51,7 @@
        <form method="POST">
         <h1>LOGIN NOW</h1>
         <input type="text" name="kadi" placeholder="Username"/>
-        <input type="text" name="sifre" placeholder="Password"/>
+        <input type="Password" name="sifre" placeholder="Password"/>
         <button>LOGIN</button>
       </form>
       <p>Not a member? <span class="signup">Sign Up</span></p>

@@ -31,7 +31,7 @@ $row = mysqli_fetch_array($query);
  	</span> -->
 	<div class="box one" style="background: url(<?php echo 'uploads/'.$row['foto1']; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;">
 		<div class="date">
-			<h4><?php echo $row['tarih']; ?></h4>
+			<h4 style="color: white"><?php echo $row['tarih']; ?></h4>
 		</div>
 			<h1 style="background-color: white;">
 		<div class="baslik common"><?php echo $row['baslik']; ?> 
@@ -74,10 +74,9 @@ $row = mysqli_fetch_array($query);
 
 <div style="padding-top: 10px;"></div>
 
-
 <?php
 $s = $_SESSION["kadi"];
-if($s == $com['author']){ ?>
+if($s == $com['author'] || $grup == 1){ ?>
 <form method="post">
   <input type="hidden" name="pid" value="<?php echo $row['id']; ?>">
   <input type="hidden" name="yorum" value="<?php echo $com['yorum']; ?>">
@@ -133,8 +132,14 @@ if(isset($_POST['delete']) ? $_POST['delete'] : '' == true) {
   <input type="submit" name="comment" value="Submit">
 </form>
 
+<?php if($_SESSION['kadi'] == $row['olusturan'] || $grup == 1) { ?>
+	<div style="height: 40px; text-align: center;">
+		<a style="text-decoration: none" href="sil?id=<?php echo $row['id']; ?>">Delete Campground</a>
+	</div>
+<?php } ?>
 
 </div>
+		
 	
 
 
