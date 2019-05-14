@@ -49,7 +49,7 @@ if($kadi == true) {
        <form method="POST">
         <h1>SIGN UP</h1>
         <input type="text" name="kadi" placeholder="Username"/>
-        <input type="text" name="sifre" placeholder="Password"/>
+        <input type="Password" name="sifre" placeholder="Password"/>
         <button>SIGN UP</button>
       </form>
       <p>Already sign up? <span class="login">Login</span></p>
