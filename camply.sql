@@ -50,6 +50,7 @@ INSERT INTO `camp` (`id`, `baslik`, `aciklama`, `fiyat`, `foto1`, `olusturan`, `
 (5, 'Unkervatnet, Ørnes, Norway', 'Unkervatnet is a gorgeous remote lake in the municipality of Hattfjelldal in Nordland county. This lake offers two popular campsites, both on the shore side. Ørnes camping is available on the eastern end of the lake, and Tjolmen, on the north side of the lake, near the middle. This is outdoor living at its best and you can also enjoy rafting, swimming and bathing here', '20', '005.jpg', 'arda', '2019-05-12'),
 (6, 'Brighouse Bay Holiday Park', 'Spacious family and pet-friendly park with a country park feel Indoor pool, café, lounge bar, amusement room and fitness room Sandy beach, 18-hole golf course, fishing, pony treks and more If the kids say they’re bored at Brighouse Bay Holiday Park at Kirkcudbright on the Dumfries and Galloway coast, you might want to send them home. Sublime sea views, heaps of on-site activities, six fishing ponds, a private beach and around 1200 acres of also-sublime countryside walks on the doorstep are all here all year round, tucked on a secluded and peaceful peninsula with views over the Irish Sea', '30', '001.jpg', 'burak', '2019-05-12'),
 (7, 'Loch Tay Highland Lodges', 'Warm and comfy glamping with Highlands loch views Archery, canoeing, fishing, kayaking and mountain biking all available Restaurant with open fire and Loch Tay views Wake up in heated glamping accommodation and drink in the views of a Central Highlands loch, take a boat out to hook a fishy supper, or settle down to a boathouse restaurant meal with views to take your breath away… easy options at Loch Tay Highland Lodges, where you can snuggle down for some warm and cosy glamping and the best of Highland highlights. The park is tucked away high on a hill overlooking Loch Tay and stunning scenery – use it as a base for sightseeing around central Scotland and the Highlands, or do some day tripping and shopping in Glasgow, Edinburgh and Stirling an accessible drive away.', '40', '002.jpg', 'mert', '2019-05-12'),
+(8, 'Cosmos Lounge', 'Bir tablonun içinde yaşadığını hayal et!Yeşilin, mavinin, kahverenginin en güzel tonlamalarıyla resmedilmiş pastoral bir şiirsellik...Kabak Vadisinin en eşsiz manzaralarına sahip, kuş cıvıltılarıyla uyandığın gün boyu esen meltemleriyle mis gibi kokuları, oksijeni, iyotu, denizi içine çekip serinlediğin bütün negatif enerjilerini çimlerden toprağa verip organik şekilde hazırlanmış lezzetine doyum olmaz yemek seçenekleriyle bedenine en sağlıklı şekilde bakıp gece yıldızlara dokunabildiğin Kozmoz’un en güzel bahçelerinden Cosmos Lounge', '50', '003.jpg', 'tugberk', '2019-05-12'),
 (9, 'Kıyıköy', 'Kıyıköy, İstanbul’a ortalama 140 km uzaklıkta ve Kırklareli’ne bağlı. Bu sevimli sahil beldesine İstanbul’dan en hızlı Çerkezköy-Saray karayolu üzerinden ulaşılıyor ve yol yaklaşık 2 saat sürüyor. Kıyıköy’de zaten herhangi bir lüks tesis olmadığı için gelenler çoğunlukla kamp yapıyorlar. Yaz aylarında gittiğinizde buranın dalgalı denizine de girebilir, biraz Karadeniz’in tuzunun tadına bakabilirsiniz.', '10', 'kiyikoy.jpg', 'arda', '2019-05-13'),
 (10, 'D’Olde Kamp, Ansen, Netherlands', 'This woodland site has a choice of open field camping or more private pitches, and finishing touches such as coffee on tap, warm bread to order, fire pits, an outdoor pizza oven and free wifi. It offers all the benefits of a countryside location without the feeling of roughing it. Goats, donkeys, chickens and rabbits are your neighbours – kids can help feed them with the farmer and get a “farming diploma”.', '30', '2048.jpg', 'burak', '2019-05-13');
 
@@ -141,13 +142,13 @@ ALTER TABLE `camp`
 -- Tablo için AUTO_INCREMENT değeri `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`
 --
 ALTER TABLE `kullanicilar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
