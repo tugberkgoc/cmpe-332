@@ -54,7 +54,7 @@
         <input type="Password" name="sifre" placeholder="Password"/>
         <button>LOGIN</button>
       </form>
-      <p>Not a member? <span class="signup">Sign Up</span></p>
+      <p>Not a member? <a href="/camply/kayit" class="signup">Sign Up</a></p>
     </div>
   </div>
 </div>

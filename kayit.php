@@ -52,7 +52,7 @@ if($kadi == true) {
         <input type="Password" name="sifre" placeholder="Password"/>
         <button>SIGN UP</button>
       </form>
-      <p>Already sign up? <span class="login">Login</span></p>
+      <p>Already sign up? <a href="/camply/giris" class="login">Login</a></p>
     </div>
   </div>
 </div>
